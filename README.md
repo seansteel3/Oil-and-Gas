@@ -15,7 +15,7 @@ For a complete set of visualizations check out the Oil & Gas PDF.
 ## Summary
 
 
-With rising costs of gasoline and crude oil prices hitting all-time highs, understanding the drivers of this market is a question well suited for regression analysis. 
+
 
 
 <!-- Introduction -->
