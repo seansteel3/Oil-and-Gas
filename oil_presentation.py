@@ -2,11 +2,6 @@
 """
 Created on Tue Jul 26 17:38:50 2022
 
-NEED:
-    BACKWARDS DELETION FOR TERM FEQUENCY
-    BOOTSTRAP STANDARD ERRORS
-    MODEL WITH US SUBBED IN
-Oil Presentation
 
 
 @author: SeanSteele
