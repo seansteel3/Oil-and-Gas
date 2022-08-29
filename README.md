@@ -6,11 +6,13 @@ For a complete set of visualizations check out the Oil & Gas PDF.
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
+* [Summary](#summary)
 * [Introduction](#introduction)
   * [Run With](#run-with)
 
 
-
+<!-- Summary -->
+## Introduction
 
 
 <!-- Introduction -->
