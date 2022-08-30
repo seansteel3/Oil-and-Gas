@@ -47,11 +47,10 @@ MARS is an adaptive rapid regression algorithm developed to rapidly identify lin
 The MARS algorithm automatically detects knot locations and higher order interactions between variables when suitable. MARS generally requires minimal data preparation and produces models that are nearly as interpretable as classic multiple regression models. 
 Formally MARS uses the positive portion of what are called hinge functions to separate the data at previously mentioned spline knots.
 
-![image](https://user-images.githubusercontent.com/67161057/187490063-18eeb4e6-47b7-40bc-aaff-14dea0e950d7.png)
 
 These hinge functions are applied adaptively throughout the entire data set, and additively summed together to give our final model. In mathematical notation our final model has the same form as multiple regression:
 
-![Screenshot 2022-08-30 122702](https://user-images.githubusercontent.com/67161057/187490421-818a3cfa-27f5-4907-bef4-ccc817485c3b.png)
+![Screenshot 2022-08-30 122702](https://user-images.githubusercontent.com/67161057/187490802-026bfc4a-470f-42cf-8d7d-e45f8e76bfd4.png)
 
 Where X is the data,  β_0 is a regression constant, M is the number of hinge functions used, h_m is a particular hinge function, and β_m is the coefficient for a particular hinge function.
 
