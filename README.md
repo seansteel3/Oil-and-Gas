@@ -26,7 +26,12 @@ In the current political climate of 2022, all sides have an idea of why oil and 
 This project aims to uncover high level drivers of oil and gasoline prices, as well as to explore MARS and Multiple Regression in this context as data mining applications as well as predictive models.
 
 ### Run With
-Python 3.10
+Python 3.9.7
+ * pandas
+ * numpy
+ * statsmodels
+ * sklearn
+ * pyearth
 
 <!-- Data Sources -->
 ## Data Sources
