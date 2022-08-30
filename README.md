@@ -66,7 +66,7 @@ To create the above model MARS proceeds forward as follows:
 
 1. Regress a constant (β_0) on all the data
 2. Generate all possible knots for all possible hinge functions across all variables 
-3. Select a hinge function by multiplying it to any already selected term in the model 
+3. Select a hinge function by multiplying it to any already incorporated term in the model 
 4. Select the “best” candidate in step 3 by least squares
 5. Repeat steps 2-4 until a set maximum number of variables reached or until a decrease in squared error reaches some threshold.
 
