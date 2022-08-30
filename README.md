@@ -11,6 +11,8 @@ For a complete set of visualizations check out the Oil & Gas PDF.
   * [Run With](#run-with)
 * [Data Sources](#data-sources)
 * [A Journey to MARS](#a-journey-to-mars)
+* [Results](#results)
+
 
 
 <!-- Summary -->
@@ -45,7 +47,6 @@ See Data Sources excel file for relevant links.
 This project aims to uncover major correlates of historical oil prices (and therefore gasoline prices) to understand the current market dynamics in 2022. Additionally, due to the large amount of data and data sources available, this project also aims to experiment with, explore, and apply a machine learning algorithm known as Multivariate Adaptive Regression Splines (MARS) in both a model construction setting and a feature selection setting.
 
 
-
 <!-- A Journey to MARS -->
 ## A Journey to MARS
 
@@ -76,6 +77,60 @@ Generally, by the end of the last step the model is overfit to the data. Therefo
 
 Where RSS is model residual sum of squares, N is number of data points, and pe is effective number of parameters.
 
+<!-- Results -->
+## Results
+
+### Initial Data Exploration
+
+The initial pass through the data (slides 1-7 in the PDF) aimed to explore the dataset and uncovered a few interesting points. For instance, between January 1997 and May 2022 there is no clear correlation between new oil rig construction and oil production within the US. Additionally, drilling on public lands and associated drilling permissions granted by the president do not have a clear correlation to US oil production. Lastly, within this dataset, political party of the president does not have a clear correlation with the number of rigs produced in a year, or number of public drilling permits approved.
+
+Neither of these points are extremely surprising since oil rig construction does not necessitate productive rigs, nor does it require that all rigs are created equal. Further, public land permits and associated drilling is not always productive, and only accounts for about 10-15% of all oil produced in the US.
+Gasoline prices are highly correlated to oil prices (R^2 = 0.933, P = 0.000) and refinery profit margins (R^2 = 0.232, P = 0.000). This fact is not surprising given gasoline is refined from oil, and the cost as well as profit margin of the refinery process would be transferred to the consumer.
+
+### Predictive Model Construction
+
+To assess what variables may be most impactful and potentially causative for oil change prices, several predictive models were constructed. The first pass began with a full multiple regression (MR) model and a MARS “out of the box” model. Data used for model construction only included months 50-247, where all variables had complete coverage. Training data (in sample) was subset to months 50-200 and test (out sample) 201-247.
+
+Both methods produced similar models in sample, and both failed to capture a large drop around month 215 in the out sample. However, MARS continued to capture the trend in the out sample after month 215, while MR did not (MARS MSE = 924, MR MSE = 1481). 
+
+To improve out sample prediction MARS was run in a feature selection setting. The training data was subset into 200 80/20 random train/discard sets and one full data set. MARS was run over these 201 datasets and the frequency of each feature computed. Any features not included in at least 25% of the models were discarded, and the remaining features were run through a grid search to produce a MR model. Using MARS in this fashion narrowed down the possible number of models from 4.1 million to ~4000. 
+
+After running the 4000 candidate MR models, the top 1000 (by MSE on the out-sample) were given an additional autoregressive term. This term was constructed by regressing the previous 7 months’ worth of oil price data on itself to predict the current month. 7 Months was chosen arbitrarily. Adding the autoregressive term had the desired effect of stabilizing prediction accuracy, while not dominating the model predictions. 
+
+These 1000 models were then run through another MR model for gasoline price (Gas Price = Oil Price + Refinery Profit Margins). The out sample MSE for each model (oil price and gas price) were computed, and each respectively normalized between 0 and 1. The model with the best global rank MSE (normalized MSE for oil + normalized MSE for gas) was chosen as the best model. 
+
+The top model by global rank MSE included the features:
+1. Running Deficit
+2. US Industrial Production
+3. Global Industrial Production
+4. US Retail Sales
+5. Global CPI
+6. Global Core CPI
+7. Autoregressive Term (Auto)
+
+To contrast building a MR model with MARS, a standard back selection procedure was implemented on the full initial MR model. The procedure removed one term from the full model, checked the MSE, and permanently deleted the term with the worst improvement in MSE. This was continued until no MSE improvement was detected. 
+The final model included the features:
+1. Running Deficit
+2. US CPI
+3. US Industrial Production
+4. US Retail Sales
+5. Global Unemployment Rate
+6. Global Retail Sales
+7. Global CPI
+
+This model was then given and auto regressive term and run through the gasoline MR model. 
+
+The MARS feature selection model outperformed the back selection model (MARS Oil Price MSE = 42.54 Back Selection MSE = 65.32 and MARS Gas Price MSE = 0.015 Back Selection Gas Price MSE = 0.02). However, a critical issue remains with these model assessments. Specifically, both MSE’s throughout both processes were computed on the out sample. An important future direction is to run both models on truly unseen data when the World Bank’s datasets are updated.
+
+Final Models (prediction in red, actual in blue):
+
+![Screenshot 2022-08-30 133504](https://user-images.githubusercontent.com/67161057/187505498-2e8b7e7a-c34d-46f2-909c-5ff4bd9b67d8.png)
+
+![Screenshot 2022-08-30 133520](https://user-images.githubusercontent.com/67161057/187505526-a07e48ca-6d59-44c0-9ba0-7c15f3354dc3.png)
+
+![Screenshot 2022-08-30 133137](https://user-images.githubusercontent.com/67161057/187505540-0d112e8f-da5f-459c-a265-6a7c7cfc4b16.png)
+
+![Screenshot 2022-08-30 133110](https://user-images.githubusercontent.com/67161057/187505555-764b06f8-5e95-4a74-b15e-feb350341e04.png)
 
 
 
