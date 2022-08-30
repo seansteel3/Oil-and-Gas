@@ -88,7 +88,7 @@ However, gasoline prices are highly correlated to oil prices (R^2 = 0.933, P = 0
 
 ### Predictive Model Construction
 
-To assess what variables may be most impactful and potentially causative for oil change prices, several predictive models were constructed. The first pass began with a full multiple regression (MR) model and a MARS “out of the box” model. Data used for model construction only included months 50-247, where all variables had complete coverage. Training data (in sample) was subset to months 50-200 and test (out sample) 201-247.
+To assess what variables may be most impactful, or at least most correlated to oil change prices, several predictive models were constructed. The first pass began with a full multiple regression (MR) model and a MARS “out of the box” model. Data used for model construction only included months 50-247, where all variables had complete coverage. Training data (in sample) was subset to months 50-200 and test (out sample) 201-247.
 
 Both methods produced similar models in sample, and both failed to capture a large drop around month 215 in the out sample. However, MARS continued to capture the trend in the out sample after month 215, while MR did not (MARS MSE = 924, MR MSE = 1481). 
 
