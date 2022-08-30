@@ -57,11 +57,12 @@ Where X is the data,  β_0 is a regression constant, M is the number of hinge fu
 To create the above model MARS proceeds forward as follows:
 
 1. Regress a constant (β_0) on all the data
-2. Generate all possible knots for all possible basis functions across all variables 
-3. Select the “best” candidate in step 2 by least squares
-4. Repeat steps 2-3 until a maximum number of variables reached or until a decrease in squared error reaches some threshold.
+2. Generate all possible knots for all possible hinge functions across all variables 
+3. Select a hinge function by multiplying it to any already selected term in the model 
+4. Select the “best” candidate in step 3 by least squares
+5. Repeat steps 2-4 until a set maximum number of variables reached or until a decrease in squared error reaches some threshold.
 
-Generally, by the end of the last step we have a model that has overfit the data. Therefore, MARS then applies generalized cross validation (GCV) in a backwards deletion process, removing one term at a time until we have minimized the generalized cross validation metric.
+Generally, by the end of the last step the model is overfit to the data. Therefore, MARS then applies generalized cross validation (GCV) in a backwards deletion process, removing one term at a time until we have minimized the generalized cross validation metric.
 
 ![Screenshot 2022-08-30 122757](https://user-images.githubusercontent.com/67161057/187490510-5d1878f6-3efd-4e0d-a5b2-7633a5278c32.png)
 
