@@ -21,6 +21,9 @@ With rising costs of gasoline and crude oil prices nearing all-time highs, under
 ## Introduction
 In the current political climate of 2022, all sides have an idea of why oil and gasoline prices have risen to current highs. Regardless of political affiliation, much of the data required to understand the current global pricing is publicly available and relatively straight forward to analyze with modern analytics tools. At least to develop a high-level understanding of the major factors at play.
 
+### Run With
+Python 3.10
+
 <!-- Data Sources -->
 ## Data Sources
 US oil industry data and gasoline price data was collected from the EIA’s short term energy outlook, and drilling productivity report data sets. Data pertaining to total oil production and consumption came from the Bureau of Land Management was validated from related tables in the EIA’s datasets and the Natural Resources Revenue Data. Yahoo finance supplied average monthly oil prices. Global economic indicators were collated from the World Bank’s Global Economic Monitor and relevant US metrics were validated from data publicly available from either the White House or the Bureau of Labor Statistics.
@@ -34,8 +37,7 @@ This project aims to uncover major correlates of historical oil prices (and ther
 
 
 
-### Run With
-Python 3.10
+
 
 
 
