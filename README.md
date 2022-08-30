@@ -9,7 +9,7 @@ For a complete set of visualizations check out the Oil & Gas PDF.
 * [Summary](#summary)
 * [Introduction](#introduction)
   * [Run With](#run-with)
-
+* [Data Sources](#data-sources)
 
 <!-- Summary -->
 ## Summary
@@ -20,6 +20,14 @@ With rising costs of gasoline and crude oil prices nearing all-time highs, under
 <!-- Introduction -->
 ## Introduction
 In the current political climate of 2022, all sides have an idea of why oil and gasoline prices have risen to current highs. Regardless of political affiliation, much of the data required to understand the current global pricing is publicly available and relatively straight forward to analyze with modern analytics tools. At least to develop a high-level understanding of the major factors at play.
+
+<!-- Data Sources -->
+## data sources
+US oil industry data and gasoline price data was collected from the EIA’s short term energy outlook, and drilling productivity report data sets. Data pertaining to total oil production and consumption came from the Bureau of Land Management was validated from related tables in the EIA’s datasets and the Natural Resources Revenue Data. Yahoo finance supplied average monthly oil prices. Global economic indicators were collated from the World Bank’s Global Economic Monitor and relevant US metrics were validated from data publicly available from either the White House or the Bureau of Labor Statistics.
+All data sources that could not be correlated or otherwise validated by at least two sources (except for oil and gasoline price data) was discarded. All included monthly data was transformed and collated into one summary oil statistics table, while data of interest that could only be found at yearly intervals was collated into a separate yearly data table. Production and consumption data was transformed from average mega barrels (or gallons) of oil (or gas) per month to total consumed barrels (or gallons) per month.
+One custom variable of importance, Running Deficit, was created to estimate general supply and demand by subtracting monthly global oil production from monthly global oil consumption to keep a running tally of available supply. Note this metric erroneously begins at 0 in Jan 1997 due to data limitations, and negative numbers do not imply inadequate or non-existing global supply 
+See Data Sources excel file for relevant links.
+
 
 This project aims to uncover major correlates of historical oil prices (and therefore gasoline prices) to understand the current market dynamics in 2022. Additionally, due to the large amount of data and data sources available, this project also aims to experiment with, explore, and apply a machine learning algorithm known as Multivariate Adaptive Regression Splines (MARS) in both a model construction setting and a feature selection setting.
 
