@@ -21,7 +21,7 @@ With rising costs of gasoline and crude oil prices nearing all-time highs, under
 ## Introduction
 In the current political climate of 2022, all sides have an idea of why oil and gasoline prices have risen to current highs. Regardless of political affiliation, much of the data required to understand the current global pricing is publicly available and relatively straight forward to analyze with modern analytics tools. At least to develop a high-level understanding of the major factors at play.
 
-This project aims to uncover major correlates of historical oil prices (and therefore gasoline prices) to understand the current market dynamics in 2022. Additionally, due to the large amount of data and data sources available, this project also aims to experiment with, explore, and apply a machine learning algorithm known as Multivariate Adaptive Regression Splines (MARS).
+This project aims to uncover major correlates of historical oil prices (and therefore gasoline prices) to understand the current market dynamics in 2022. Additionally, due to the large amount of data and data sources available, this project also aims to experiment with, explore, and apply a machine learning algorithm known as Multivariate Adaptive Regression Splines (MARS) in both a model construction setting and a feature selection setting.
 
 
 
