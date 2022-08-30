@@ -133,7 +133,7 @@ Final Models (prediction in red, actual in blue):
 
 ![Screenshot 2022-08-30 133137](https://user-images.githubusercontent.com/67161057/187505540-0d112e8f-da5f-459c-a265-6a7c7cfc4b16.png)
 
-![back_sel_gas](https://user-images.githubusercontent.com/67161057/187532812-a64d5ec1-267b-4f0d-921a-b5be1f730525.png)
+![back_sel_gas_auto](https://user-images.githubusercontent.com/67161057/187532951-7ae31a01-48c4-47ea-80db-2eefcb95546e.png)
 
 
 Remaining visual results in the PDF slideshow
