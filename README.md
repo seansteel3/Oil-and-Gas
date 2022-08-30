@@ -88,6 +88,8 @@ None of these points are extremely surprising since oil rig construction does no
 
 However, gasoline prices are highly correlated to oil prices (R^2 = 0.933, P = 0.000) and refinery profit margins (R^2 = 0.232, P = 0.000). This fact is also not surprising given gasoline is refined from oil, and the cost as well as profit margin of the refinery process would be transferred to the consumer.
 
+*All P-values have been corrected for heteroskedasticity
+
 ### Predictive Model Construction
 
 To assess what variables may be most impactful, or at least most correlated to oil change prices, several predictive models were constructed. The first pass began with a full multiple regression (MR) model and a MARS “out of the box” model. Data used for model construction only included months 50-247, where all variables had complete coverage. Training data (in sample) was subset to months 50-200 and test (out sample) 201-247.
