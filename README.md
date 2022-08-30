@@ -135,7 +135,7 @@ Final Models (prediction in red, actual in blue):
 Remaining visual results in the PDF slideshow
 
 <!-- References -->
-##Non Data Source References
+## Non Data Source References
 
 * ESLII – Advanced Machine Learning
 * Jerome H. Friedman. "Multivariate Adaptive Regression Splines." The Annals of Statistics, 19(1) 1-67 March, 1991
