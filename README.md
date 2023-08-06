@@ -75,7 +75,7 @@ Generally, by the end of the last step the model is overfit to the data. Therefo
 
 Where RSS is model residual sum of squares, N is number of data points, and pe is effective number of parameters.
 
-MARS generally requires minimal data preparation and produces models that are nearly as interpretable as classic multiple regression models, with additional insights into higher order interactions and non-linearities.
+MARS generally requires minimal data preparation and produces models that are nearly as interpretable as classic multiple regression models, with additional insights into higher order interactions and non-linearities. MARS also tends to preform nearly as well as well crafted MLP nueral networks
 
 <!-- Results -->
 ## Results
