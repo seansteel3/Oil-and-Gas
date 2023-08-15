@@ -67,7 +67,7 @@ To create the above model MARS proceeds forward as follows:
 2. Generate all possible knots for all possible hinge functions across all variables 
 3. Select a hinge function by multiplying it to any already incorporated term in the model 
 4. Select the “best” candidate in step 3 by least squares
-5. Repeat steps 2-4 until a set maximum number of variables reached or until a decrease in squared error reaches some threshold.
+5. Repeat steps 3-4 until a set maximum number of variables reached or until a decrease in squared error reaches some threshold.
 
 Generally, by the end of the last step the model is overfit to the data. Therefore, MARS then applies generalized cross validation (GCV) in a backwards deletion process, removing one term at a time until we have minimized the generalized cross validation metric.
 
